@@ -12,12 +12,12 @@ class StudentController extends Controller
 
     public function index(Request $request) {
     $student = [
-        'name' => '',
-        'address' => '',
-        'phone' => '',
-        'gender' => '',
-        "age" => "",
-        "nisn" => ""
+        'name' => 'akbar',
+        'address' => 'genteng',
+        'phone' => '08978630225',
+        'gender' => 'male',
+        "age" => "17",
+        "nisn" => "1234567890"
     ];
     return view('indexstudent', compact('student'));
 }
