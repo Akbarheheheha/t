@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        // ini fungsi buat data tabel buat dimasukin ke database
+        Schema::create('students', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 100);
+            $table->string('address', 255);
+            $table->string('phone', 20)->unique();
+            $table->enum('gender', ['Laki-laki', 'Perempuan']);
+            $table->integer('age');
+            $table->string('nisn', 20)->unique();
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        // ini fungsi kalau misal datanya udah ada
+        Schema::dropIfExists('siswas');
+    }
+};

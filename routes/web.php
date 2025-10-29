@@ -20,6 +20,13 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
+Route::get("/student/cekObject", [App\Http\Controllers\StudentController::class, 'cekObject']);
+
+Route::get("/student/insert", [App\Http\Controllers\StudentController::class, 'insert']);
+
+Route::get("/student/isiBanyak", [App\Http\Controllers\StudentController::class, 'MassAssigment']);
+Route::get("/tugas", [App\Http\Controllers\TugasController::class, 'insert']);
+Route::get("/subject", [App\Http\Controllers\SubjectController::class, 'insert']);
