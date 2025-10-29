@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\Siswa;
+use App\Models\subject;
 
 class StudentController extends Controller
 {
@@ -86,18 +87,40 @@ class StudentController extends Controller
 
     }
 
-    public function MassAssigment()
+    public function MassAssigment(Request $request)
     {
+    
         Siswa::create([
-            'name' => 'Akbar',
+            'name' => 'rizqi',
             'address' => 'Genteng',
-            'nisn' => '123456789',
-            'phone' => '0812345678',
+            'nisn' => '12345679',
+            'phone' => '081234764',
             'age' => 10
         ]);
 
-        return "Berhasil masuk datanya anjeng";
+        return "<h1>Berhasil masuk datanya</h1>";
     }
-}
-;
+
+    public function update(){
+        $subject = subject::find(1);
+        $subject->subject_name = 'Hadi';
+        $subject->save();
+        dd($subject);
+    }
+    public function updateByWhare(){
+        $subject = subject::where("id" , 1)->first();
+        $subject->subject_name = 'perus';
+        $subject->save();
+        dd($subject);
+    }
+
+    public function updateByMas(){
+        subject::where('id',1)->first()->update([
+            'subject_name' => 'repan'
+        ]);
+        return "<h1>berhasil jir👍👍👍👍👍</h1>";
+    }
+
+    }
+
 

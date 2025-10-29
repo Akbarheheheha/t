@@ -27,6 +27,10 @@ Route::get("/student/cekObject", [App\Http\Controllers\StudentController::class,
 
 Route::get("/student/insert", [App\Http\Controllers\StudentController::class, 'insert']);
 
-Route::get("/student/isiBanyak", [App\Http\Controllers\StudentController::class, 'MassAssigment']);
 Route::get("/tugas", [App\Http\Controllers\TugasController::class, 'insert']);
 Route::get("/subject", [App\Http\Controllers\SubjectController::class, 'insert']);
+
+Route::get("/student/isiBanyak", [App\Http\Controllers\StudentController::class, 'MassAssigment']);
+Route::get("/student/isiBanyak2", [App\Http\Controllers\StudentController::class, 'update']);
+Route::get("/student/isiBanyak3", [App\Http\Controllers\StudentController::class, 'updateByWhare']);
+Route::get("/student/isiBanyak4", [App\Http\Controllers\StudentController::class, 'updateBymas']);
